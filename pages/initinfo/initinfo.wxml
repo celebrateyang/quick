@@ -1,0 +1,32 @@
+<view class="outside">
+   
+    <!--<view class="title">
+        <text class="userinfo-nickname">{{userInfo.nickName}},你好</text>
+    </view>-->
+    <form bindsubmit="formSubmit" class="formclass">
+        
+            <view class="section_title">请在下方选择你上次月经的第一天</view>
+            <picker mode="date" bindchange="bindDateChange" name="initdate">
+                <view class="inputbox">
+                :{{date}}
+                </view>
+            </picker>
+        
+        <view class="section_title">
+        请在下方输入您的平均周期(天)
+        </view>
+        <view class="inputbox">
+            <input placeholder="24-40" placeholder-class="psection" type="number"  name="cycle"/>
+        </view>
+        <view class="btn-area">
+            <button formType="submit" disabled="{{disabled}}" class="abutton" >{{buttonvalue}}</button>
+        </view>
+        <!--<view bindtap="clearStorage">清除缓存</view>-->
+    </form>
+    
+            <text class="remindtext">
+                上海护理友情提示:请<text class="yunxu">允许</text>微信授权,
+                否则您将不能正常进入系统!
+                因为拒绝授权,系统无法记录信息.
+            </text>
+</view>

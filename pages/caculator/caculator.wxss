@@ -1,0 +1,128 @@
+page{
+  height: 100%
+}
+text{
+    color: #fff;    
+}
+.table {  
+  border: 1px solid darkgray;
+  width: 100%;
+ 
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  text-align: center;
+  align-items: center;
+  padding:0;
+  margin: 0;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid bisque;
+    margin: 0;
+    padding:0;
+}
+/*.bg-w{
+  background: snow;
+}*/
+.bg-g{
+  background: lightpink;
+}
+.bg-b{
+  background: pink;
+}
+.remind{
+  color: #fff;
+  height:1rem;
+  background: pink;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: pink;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.container{
+  padding-top: 1rpx;
+}
+.remindblock{
+  display: flex;
+  background: pink;
+  justify-content: space-around;
+  align-items: center
+}
+.safeclass{
+    height: 21px;
+    width: 60px;
+    border: 1px solid #FFE4C4;
+    background: #6BC235;
+    
+}
+.lunariaclass{
+    height: 21px;
+    width: 60px;
+    border: 1px solid #FFE4C4;
+    background: #FAE371;
+}
+.dangerousclass{
+    
+    height: 21px;
+    width: 60px;
+    border: 1px solid #FFE4C4;
+    background: #FF4364;
+}
+.clickbutton{
+  height: 100rpx;
+  display: flex;
+  justify-content: space-around;
+  background: lightpink;
+  align-items: center;
+}
+.previousMonth{
+  border: 1rpx solid #fff;
+  
+  /*margin-left: 100rpx;
+  width:200rpx;
+  height:40rpx;*/
+  background: pink;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.nextMonth{
+  border: 1rpx solid #fff;
+  
+   /*margin-left: 100rpx;
+  width:200rpx;
+  height:40rpx;
+  background: pink;*/
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.largeRemind{
+  height:100%;
+  background:lightpink;
+  border:1rpx;
+  color:#fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size:14px
+}
+.abutton{
+  
+    color: #FFB6C1;
+    cursor: pointer;
+}
+.button-hover {
+  background-color: lightgray;
+}

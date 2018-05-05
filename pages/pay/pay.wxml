@@ -1,0 +1,14 @@
+<view class="viewcontainer">
+<form bindsubmit="formSubmit" class="formclass">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+  </radio-group>
+  <view class="btn-area">
+    <button formType="submit" disabled="{{disabled}}" class="abutton" >{{buttonvalue}}</button>
+  </view>
+</form>
+<button class="abutton" wx:if="{{canIUseShare}}" open-type="share">您也可分享到群,获取时长</button>
+    <button class="abutton" bindtap="remindNoshare" wx:else>您也可分享到群,获取时长</button>
+</view>

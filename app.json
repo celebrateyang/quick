@@ -1,0 +1,21 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/initinfo/initinfo",
+    "pages/pay/pay",
+    "pages/caculator/caculator",
+    "pages/logs/logs",
+    "pages/adjust/adjust",
+    "pages/sleep/sleep"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FFB6C1",
+    "navigationBarTitleText": "安全期随时看",
+    "navigationBarTextStyle":"white"
+  }
+  
+ 
+}

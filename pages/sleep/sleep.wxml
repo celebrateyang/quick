@@ -1,0 +1,7 @@
+<view class="section">
+  <video id="myVideo" src="http://ugcbsy.qq.com/f0545t9r1xz.mp4?sdtfrom=v1010&guid=fd7f06e1e1a2118d1aefb4112b344220&vkey=E6EFF12F31387B73305DD0264E281B0B46F0409D4699F1BE0DD58531BC7226728481D913227DB9FF44CBB8078ED0B552A4D0BFCD99A762D8645A443E1EF77495E830E691C11CA40D4B57B3786A28528399C69123EB8D18E9CE7623D897AD74C9C859B05DD92E76E1794B133AE1EFB769232709CFFD1FA02E"   enable-danmu danmu-btn controls></video>
+  <view class="btn-area">
+    <input bindblur="bindInputBlur"/>
+    <button bindtap="bindSendDanmu">发送弹幕</button>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+page{height:100%}
+
+.outside{
+  height: 100%;
+  background:#FFB6C1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-start
+}
+
+.formclass{
+  margin-top: 1rpx;
+  display:flex;
+  background: #FFB6C1;
+  border: 1rpx dashed #FFB6C1;
+  color: white;
+  height: 70%;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items: center;
+}
+.inputbox{
+ border:1rpx solid #fff;
+ padding:10rpx;
+ margin-top: 30rpx;
+ margin-bottom: 30rpx;   
+}
+.section_title{
+  text-align: center;
+  margin-top: 30rpx;
+}
+.abutton{
+  color: #FFB6C1;
+  cursor: pointer;
+}
+
+.title{
+  color: #fff;
+}
+.psection{
+  color: #E0E0E0;
+}
+.remindtext{
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+.yunxu{
+  color:greenyellow;
+  font-size: 20px;
+}

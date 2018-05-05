@@ -1,0 +1,41 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.5.4",
+	"appid": "wx41bce4f14ed1c59c",
+	"projectname": "%E5%AE%89%E5%85%A8%E6%9C%9F%E9%9A%8F%E6%97%B6%E7%9C%8B",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "分享测试",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1044",
+					"shareInfo": {
+						"groupName": "测试模拟群0",
+						"shareName": "3cos6_P_J_10Sg0eUq_dhmpYqPczKfqPte_Y8xg30Uk@cr4dev",
+						"shareKey": "tHIpq1iffMJ0CmUSup2eAXD_WOnrnn-wWK6vXkifHqw9WYfnvGKM1NZ6SZy6wLxyJRavYE83jKd4xbQGAycZtQ~~"
+					}
+				}
+			]
+		}
+	}
+}

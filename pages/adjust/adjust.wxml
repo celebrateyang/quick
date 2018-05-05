@@ -1,0 +1,22 @@
+ <view class="outside">
+    <form bindsubmit="formSubmit" class="formclass">
+        
+            <view class="section_title">请重新选择你上次月经的第一天</view>
+            <picker mode="date" bindchange="bindDateChange" name="initdate" value='{{date}}'>
+                <view class="inputbox">
+                :{{date}}
+                </view>
+            </picker>
+        
+        <view class="section_title">
+        请重新输入您的平均周期(天)
+        </view>
+        <view class="inputbox">
+            <input placeholder="24-40" placeholder-class="psection" type="number"  name="cycle" value='{{cycle}}'/>
+        </view>
+        <view class="btn-area">
+            <button formType="submit" disabled="{{disabled}}" class="abutton" >{{buttonvalue}}</button>
+        </view>
+    </form>  
+           
+</view> 

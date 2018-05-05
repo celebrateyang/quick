@@ -1,0 +1,76 @@
+<view class="container">
+    <view class="table">
+        <view class="tr bg-g"> 
+            <text>{{title1}}</text>
+        </view>
+        <view class="tr bg-w">
+            <view class="th">周一</view>
+            <view class="th">周二</view>
+            <view class="th">周三</view>
+            <view class="th">周四</view>
+            <view class="th">周五</view>
+            <view class="th">周六</view>
+            <view class="th">周日</view>
+        </view>
+        <block wx:for="{{listData}}" wx:key="{{code}}">
+            <view class="tr bg-g">
+            <view class="td" style="background:{{item.Monday.color}};color:#fff">{{item.Monday.value}}</view>
+            <view class="td" style="background:{{item.Tuesday.color}};color:#fff">{{item.Tuesday.value}}</view>
+            <view class="td" style="background:{{item.Wensday.color}};color:#fff">{{item.Wensday.value}}</view>
+            <view class="td" style="background:{{item.Thursday.color}};color:#fff">{{item.Thursday.value}}</view>
+            <view class="td" style="background:{{item.Friday.color}};color:#fff">{{item.Friday.value}}</view>
+            <view class="td" style="background:{{item.Saturday.color}};color:#fff">{{item.Saturday.value}}</view>
+            <view class="td" style="background:{{item.Sunday.color}};color:#fff">{{item.Sunday.value}}</view>
+            </view>
+        </block>
+        <view class="tr remindblock">
+            <text class="safeclass">安全期</text>
+            <text class="lunariaclass">月经期</text>
+            <text class="dangerousclass">易孕期</text>
+        </view>
+        <view class="clickbutton">
+            <view class="previousMonth" data-pageMonth="{{previouMonth}}" data-pageYear="{{pageYear}}" bindtap="previousClick">上一月</view>
+            <view class="nextMonth" data-pageMonth="{{nextMonth}}" data-pageYear="{{pageYear}}" bindtap="nextClick">下一月</view>
+            
+        </view>
+        <view class="tr remind">
+        上海护理友情提示:今天是{{currentYear}}年{{currentMonth}}月{{currentDate}}日。
+        </view>
+        <view class="largeRemind">
+        <p>本小程序优势:</p>        
+        <p>1.一次性录入数据,终身无忧。(不必反复录入)
+        </p>
+        <p>
+        2.不必安装,一点也不会耗费你手机上的宝贵空间。
+        </p>
+        <p>
+        3.请点击右上角"添加到桌面",以后使用更快捷。
+        </p>
+        </view>
+        <view class="largeRemind">
+        <p>避孕注意事项:</p>        
+        <p>1.安全期原理:女性的排卵日期一般在下次月经来潮前的14 天左右。下次月经来潮的第1 天算起，倒数14 天或减去14 天就是排卵日，排卵日及其前5 天和后4 天加在一起称           为排卵期。除了月经期和排卵期，其余的时间均为安全期。
+        </p>
+        <p>
+        2.本小程序根据以上原理计算出的安全期,仅作为参考。如果因此造出小人来,本小程序并不承担责任:)。
+        </p>
+        <p>3.您是{{useInfo}}用户,您剩余的使用天数为{{leftDay}}天。</p>
+        </view>
+        
+        
+       
+        
+        <!--<view class="clickbutton">-->
+           
+            <!--<view class="previousMonth" bindtap="buyproduct">购买</view>-->
+             <button class="abutton" bindtap='goadjust'>校准月经时间</button>
+            <button bindtap="buyproduct" class="abutton">购买使用时长</button>
+            <button class="abutton" wx:if="{{canIUseShare}}" open-type="share">分享到群,获取时长</button>
+            <button class="abutton" bindtap="remindNoshare" wx:else>分享到群,获取时长</button>
+            <button class="abutton" bindtap='gosleep'>失眠小助手</button>
+            <!--<view bindtap="clearStorage">清除缓存</view>-->
+        <!--</view>-->
+        
+    </view>
+
+</view>
