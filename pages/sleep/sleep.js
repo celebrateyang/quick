@@ -1,3 +1,8 @@
+var wxApi = require('../../utils/wxApi.js')
+var wxRequest = require('../../utils/wxRequest.js')
+
+
+
 function getRandomColor() {
   let rgb = []
   for (let i = 0; i < 3; ++i) {
@@ -10,7 +15,13 @@ function getRandomColor() {
 
 Page({
   onReady: function (res) {
-    this.videoContext = wx.createVideoContext('myVideo')
+    this.videoContext = wx.createVideoContext('myVideo');
+    var wxLogin = wxApi.wxLogin();
+    wxLogin().then(
+      res => {
+        console.log("then 11==>");
+      }
+    );
   },
   inputValue: '',
   bindInputBlur: function (e) {
@@ -22,4 +33,5 @@ Page({
       color: getRandomColor()
     })
   }
+
 })
