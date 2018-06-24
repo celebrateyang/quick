@@ -10,9 +10,9 @@ Page({
   data: {
     playMusicName: '自然风声',
     playMusicDes: '聆听大自然最质朴的声音',
-    playBgOrignColor: '#005F8C',//历史颜色
+    playBgOrignColor: 'pink',//历史颜色
     playBgOrignColorEnd: '#f0f0f0',//历史颜色  
-    playBgClorStart: '#005F8C',//当前颜色
+    playBgClorStart: 'pink',//当前颜色
     playBgClorEnd: '#f0f0f0',//渐变色
     playIndex: 0,//当前播放的索引位置
     isPlay: false,
@@ -23,7 +23,7 @@ Page({
     prebtn: '../res/pre.png',
     nextbtn: '../res/next.png',
     listbtn: '../res/list.png',
-    likebtn: '../res/like.png',
+    likebtn: '../res/left.png',
     cloud1: '../res/cloud_one.png',
     cloud2: '../res/cloud_two.png',
     cloud3: '../res/cloud_three.png',
@@ -284,6 +284,7 @@ Page({
 
     })
     this.drawBgAnim()
+    wx.getBackgroundAudioManager().src ="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46";
 
   },
   //上一首

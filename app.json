@@ -1,13 +1,13 @@
 {
   "pages":[
-    
+    "pages/sleep/sleep",
     "pages/index/index",
     "pages/initinfo/initinfo",
     "pages/pay/pay",
     "pages/caculator/caculator",
     "pages/logs/logs",
-    "pages/adjust/adjust",
-    "pages/sleep/sleep"
+    "pages/adjust/adjust"
+    
     
   ],
   "window":{
