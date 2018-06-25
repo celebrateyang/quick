@@ -16,7 +16,7 @@
   <!-- 底部导航栏 -->
   <view class='bottomAudio'>
     <cover-view class="play-btn">
-      <cover-image  class="play-btn-like-img" src="{{likebtn}}" background-size="cover"></cover-image>
+      <cover-image  class="play-btn-like-img" src="{{likebtn}}" background-size="cover" bindtap="goback"></cover-image>
     </cover-view>
     <cover-view class="play-btn">
       <cover-image  class="play-btn-pre-img" src="{{prebtn}}" background-size="cover" bindtap="clickPre"></cover-image>
@@ -34,7 +34,7 @@
 
   <!-- 列表弹框 -->
   <cover-view animation="{{animationAlert}}" class="animationAlert">
-    <cover-view bindtap='clickAlertList' data-id="{{index}}" data-name="{{item.musicName}}" data-des="{{item.musicDes}}" data-bgstart='{{item.musicBgStart}}' data-bgend='{{item.musicBgEnd}}' data-cover='{{item.musicImg}}' wx:for="{{array}}" class='listItem'>
+    <cover-view bindtap='clickAlertList' data-id="{{index}}" data-name="{{item.musicName}}" data-des="{{item.musicDes}}" data-bgstart='{{item.musicBgStart}}' data-bgend='{{item.musicBgEnd}}' data-cover='{{item.musicImg}}' data-musicsrc="{{item.musicSrc}}" wx:for="{{array}}" class='listItem'>
       <cover-image class='listItem-Img' src="{{playIndex==index?voice:item.musicImgSmall}}"></cover-image>
       <cover-view class="{{playIndex==index?'listItem-Name-Playing':'listItem-Name'}}">{{item.musicName}}</cover-view>
       <cover-view class="{{playIndex==index?'listItem-Des-Playing':'listItem-Des'}}">-</cover-view>

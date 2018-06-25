@@ -37,7 +37,7 @@ Page({
     gosleep: function (event) {
       console.log("gosleep==>");
       wx.redirectTo({
-        url: '../sleep/sleep'
+        url: '../sleep/sleep?openid=' + this.data.openid,
       })
     },
     onShareAppMessage: function (res) { 

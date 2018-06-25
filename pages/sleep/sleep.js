@@ -31,6 +31,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isBottomSheetVisiable: false,//是否显示弹框标识
+    openid:'',
 
     //testData
     array: [{
@@ -39,50 +40,56 @@ Page({
       musicImg: '../res/wind128.png',
       musicImgSmall: '../res/wind.png',
       musicBgStart: '#005F8C',
-      musicBgEnd: '#f0f0f0'
+      musicBgEnd: '#f0f0f0',
+      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
     }, {
       musicName: '雷雨天气',
       musicDes: '打雷下雨的雨夜',
       musicImg: '../res/rain.png',
       musicImgSmall: '../res/rain48.png',
       musicBgStart: '#111111',
-      musicBgEnd: '#f0f0f0'
+      musicBgEnd: '#f0f0f0',
+      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
     }, {
       musicName: '沙漠风尘',
       musicDes: '沙漠深处的狂风',
       musicImg: '../res/storm.png',
       musicImgSmall: '../res/storm48.png',
       musicBgStart: '#B95C00',
-      musicBgEnd: '#f0f0f0'
+      musicBgEnd: '#f0f0f0',
+      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
     }, {
       musicName: '林中鸟语',
       musicDes: '林间小鸟的清越啼鸣',
       musicImg: '../res/trees.png',
       musicImgSmall: '../res/trees48.png',
       musicBgStart: '#119F11',
-      musicBgEnd: '#f0f0f0'
+      musicBgEnd: '#f0f0f0',
+      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
     }, {
       musicName: '深海之音',
       musicDes: '大海深处的水泡声音',
       musicImg: '../res/sea.png',
       musicImgSmall: '../res/sea48.png',
       musicBgStart: '#003973',
-      musicBgEnd: '#f0f0f0'
+      musicBgEnd: '#f0f0f0',
+      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
     }]
 
   },
 
   onReady: function () {
     this.drawBg()
-    // cloudUtil.drawAnimaCloud()//白云飘动动画
+     cloudUtil.drawAnimaCloud()//白云飘动动画
     netUtil.getMusicList();
   },
 
-  onLoad: function () {
+  onLoad: function (params) {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        hasUserInfo: true,
+        openid: params.openid
       })
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -117,6 +124,16 @@ Page({
 
   onShow() {
   },
+
+  goback:function(){
+    console.log("that.data.openid=>" + this.data.openid);
+    wx.redirectTo({
+      url: '../caculator/caculator?openid=' + this.data.openid,
+      fail: function () {
+        console.log("导航到计算结果页面失败");
+      }
+    });
+  } , 
   //绘制渐变背景
   drawBg: function () {
     var height;
@@ -261,6 +278,7 @@ Page({
       playsrc: event.currentTarget.dataset.cover
     })
     this.drawBgAnim()
+    wx.getBackgroundAudioManager().src = event.currentTarget.dataset.musicsrc;
   },
   //下一首
   clickNext: function () {
@@ -284,7 +302,7 @@ Page({
 
     })
     this.drawBgAnim()
-    wx.getBackgroundAudioManager().src ="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46";
+    wx.getBackgroundAudioManager().src = array[this.data.playIndex + 1].musicSrc;
 
   },
   //上一首
@@ -308,7 +326,7 @@ Page({
       playsrc: array[this.data.playIndex - 1].musicImg
     })
     this.drawBgAnim()
-
+    wx.getBackgroundAudioManager().src = array[this.data.playIndex - 1].musicSrc;
   },
 
   //播放点击事件
