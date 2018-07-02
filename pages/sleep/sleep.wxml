@@ -15,9 +15,9 @@
 
   <!-- 底部导航栏 -->
   <view class='bottomAudio'>
-    <cover-view class="play-btn">
+    <!-- <cover-view class="play-btn">
       <cover-image  class="play-btn-like-img" src="{{likebtn}}" background-size="cover" bindtap="goback"></cover-image>
-    </cover-view>
+    </cover-view> -->
     <cover-view class="play-btn">
       <cover-image  class="play-btn-pre-img" src="{{prebtn}}" background-size="cover" bindtap="clickPre"></cover-image>
     </cover-view>

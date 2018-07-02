@@ -35,13 +35,13 @@ Page({
 
     //testData
     array: [{
-      musicName: '自然风声',
-      musicDes: '聆听大自然最质朴的声音',
+      musicName: '自然之声',
+      musicDes: '聆听大自然的声音',
       musicImg: '../res/wind128.png',
       musicImgSmall: '../res/wind.png',
       musicBgStart: '#005F8C',
       musicBgEnd: '#f0f0f0',
-      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
+      musicSrc: 'http://dl.stream.qqmusic.qq.com/C4L0004gVaO30hdpUR.m4a?vkey=934E2EBB63374465DE1891EEC27B043C57608C13C4AEBDAA3E804A0A0FA8CF0764C7BA95DAF294CDE9F84B3E21B27E9956504F7CE9282AF5&guid=4589014471&uin=0&fromtag=66'
     }, {
       musicName: '雷雨天气',
       musicDes: '打雷下雨的雨夜',
@@ -49,15 +49,15 @@ Page({
       musicImgSmall: '../res/rain48.png',
       musicBgStart: '#111111',
       musicBgEnd: '#f0f0f0',
-      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
+      musicSrc: 'http://dl.stream.qqmusic.qq.com/C4L0002MTnVe2LKHTv.m4a?vkey=42D9AF073DADDB0591378F5628114500B1DC30BB449B7621480335C76D1389271604A40110A331BEF317F99A47A7BCD41E29195E29CD02A6&guid=4589014471&uin=0&fromtag=66'
     }, {
-      musicName: '沙漠风尘',
-      musicDes: '沙漠深处的狂风',
+      musicName: '舒暖',
+      musicDes: '舒暖的睡眠',
       musicImg: '../res/storm.png',
       musicImgSmall: '../res/storm48.png',
       musicBgStart: '#B95C00',
       musicBgEnd: '#f0f0f0',
-      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
+      musicSrc: 'http://dl.stream.qqmusic.qq.com/C400002twCkE26fb2Q.m4a?vkey=3422A0169F6199AEBE8F0B97AAB29ABA4B268E6E91CF734B3F25DCB557AC416E362213D3F031EC573798F4683155F0FFBBEA5817CB4D5C0C&guid=4589014471&uin=0&fromtag=66'
     }, {
       musicName: '林中鸟语',
       musicDes: '林间小鸟的清越啼鸣',
@@ -65,15 +65,15 @@ Page({
       musicImgSmall: '../res/trees48.png',
       musicBgStart: '#119F11',
       musicBgEnd: '#f0f0f0',
-      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
+      musicSrc: 'http://dl.stream.qqmusic.qq.com/C400004cIaFD4TmgWZ.m4a?vkey=18584356C13253444E4DE322D64FFDBBA45A4E4DEBF6522F96196EEB649484E71171E89F6D5D95F6B59EE3495E924AB281AF9C8309E368D4&guid=4589014471&uin=0&fromtag=66'
     }, {
-      musicName: '深海之音',
-      musicDes: '大海深处的水泡声音',
+      musicName: '大海之音',
+      musicDes: '大海深的水浪声音',
       musicImg: '../res/sea.png',
       musicImgSmall: '../res/sea48.png',
       musicBgStart: '#003973',
       musicBgEnd: '#f0f0f0',
-      musicSrc: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
+      musicSrc: 'http://dl.stream.qqmusic.qq.com/C4L0001SuEsL2EUdgb.m4a?vkey=157A79407861A27639A79F236C82EC1D9D4A58F135D7472BCD560F308CCC20E5B5EDC4B86D9B2E2728B827CD50B035F4710CC48611E7A686&guid=4589014471&uin=0&fromtag=66'
     }]
 
   },
@@ -85,6 +85,7 @@ Page({
   },
 
   onLoad: function (params) {
+    const that = this;
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -112,6 +113,40 @@ Page({
         }
       })
     }
+    //this.playMusic()
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    
+      backgroundAudioManager.title = this.data.playMusicName
+      backgroundAudioManager.epname = this.data.playMusicDes
+      backgroundAudioManager.singer = '优质睡眠'
+      backgroundAudioManager.coverImgUrl = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521440401578&di=ec47a4c86e104e436a7696b78290f204&imgtype=0&src=http%3A%2F%2Fpic.2265.com%2Fupload%2F2017-7%2F20177141332134035.png'
+      backgroundAudioManager.src = 'http://dl.stream.qqmusic.qq.com/C4L0004gVaO30hdpUR.m4a?vkey=934E2EBB63374465DE1891EEC27B043C57608C13C4AEBDAA3E804A0A0FA8CF0764C7BA95DAF294CDE9F84B3E21B27E9956504F7CE9282AF5&guid=4589014471&uin=0&fromtag=66'
+      backgroundAudioManager.play();
+
+      backgroundAudioManager.onPlay(function () {
+        that.setData({
+          isPlay: true
+        })
+
+      })
+      //暂停监听
+      backgroundAudioManager.onPause(function () {
+        that.setData({
+          isPlay: false
+        })
+      })
+      //停止监听
+      backgroundAudioManager.onStop(function () {
+        that.setData({
+          isPlay: false
+        })
+      })
+      //放完监听
+      backgroundAudioManager.onEnded(function () {
+        that.setData({
+          isPlay: false
+        })
+      })
   },
   getUserInfo: function (e) {
     console.log(e)
@@ -302,7 +337,7 @@ Page({
 
     })
     this.drawBgAnim()
-    wx.getBackgroundAudioManager().src = array[this.data.playIndex + 1].musicSrc;
+    wx.getBackgroundAudioManager().src = array[this.data.playIndex].musicSrc;
 
   },
   //上一首
@@ -326,7 +361,7 @@ Page({
       playsrc: array[this.data.playIndex - 1].musicImg
     })
     this.drawBgAnim()
-    wx.getBackgroundAudioManager().src = array[this.data.playIndex - 1].musicSrc;
+    wx.getBackgroundAudioManager().src = array[this.data.playIndex].musicSrc;
   },
 
   //播放点击事件
@@ -340,7 +375,7 @@ Page({
         backgroundAudioManager.epname = this.data.playMusicDes
         backgroundAudioManager.singer = '优质睡眠'
         backgroundAudioManager.coverImgUrl = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521440401578&di=ec47a4c86e104e436a7696b78290f204&imgtype=0&src=http%3A%2F%2Fpic.2265.com%2Fupload%2F2017-7%2F20177141332134035.png'
-        backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
+        backgroundAudioManager.src = 'http://dl.stream.qqmusic.qq.com/C4L0004gVaO30hdpUR.m4a?vkey=934E2EBB63374465DE1891EEC27B043C57608C13C4AEBDAA3E804A0A0FA8CF0764C7BA95DAF294CDE9F84B3E21B27E9956504F7CE9282AF5&guid=4589014471&uin=0&fromtag=66'
       } else {
         if (backgroundAudioManager.currentTime == backgroundAudioManager.duration) {
           backgroundAudioManager.startTime = 0;
