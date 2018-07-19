@@ -56,21 +56,17 @@
         </p>
         <p>3.您是{{useInfo}}用户,您剩余的使用天数为{{leftDay}}天。</p>
         </view>
-        
-        
-       
-        
         <!--<view class="clickbutton">-->
            
             <!--<view class="previousMonth" bindtap="buyproduct">购买</view>-->
              <button class="abutton" bindtap='goadjust'>校准月经时间</button>
-            <button bindtap="buyproduct" class="abutton">购买使用时长</button>
-            <button class="abutton" wx:if="{{canIUseShare}}" open-type="share">分享到群,获取时长</button>
-            <button class="abutton" bindtap="remindNoshare" wx:else>分享到群,获取时长</button>
+            <!-- <button bindtap="buyproduct" class="abutton">购买使用时长</button>
+            <button class="abutton" wx:if="{{canIUseShare}}" open-type="share">分享到群,获取时长</button> 
+            <button class="abutton" bindtap="remindNoshare" wx:else>分享到群,获取时长</button>-->
             <button class="abutton" bindtap='gosleep'>失眠小助手</button>
             <!--<view bindtap="clearStorage">清除缓存</view>-->
         <!--</view>-->
         
     </view>
-
+<ad unit-id="adunit-c816903af58156ac"></ad>
 </view>

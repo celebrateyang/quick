@@ -56,19 +56,47 @@ formSubmit: function(e) {
 
     
 
+    // if(!this.data.openid){
+    //     const that = this;
+    //     wx.showModal({
+    //         title:"友情提示",
+    //         content:"请授权读取微信用户信息,否则无法正常进入系统!授权完后,请点击左上角的返回图标,就可以继续啦!",
+    //         showCancel:false,
+    //         success:function(res){
+    //             wx.openSetting({
+    //                 success:function(res){
+    //                     if(res.authSetting["scope.userInfo"]){
+    //                       console.log("获得了用户授权");
+    //                       //获得了用户授权后再调用一下登录
+    //                       app.getUserInfo(function(userInfo){
+    //                           that.setData({
+    //                               userInfo:userInfo
+    //                           })    
+    //                       },function(){
+    //                           var loginUser = app.globalData.userInfo;     
+    //                               that.setData({
+    //                                   openid:loginUser.openid
+    //                               })
+                              
+    //                       });
+    //                     }
+    //                 }
+    //             });
+    //         }
+    //     });
+    //     return;
+    // }
+
+    this.setData({
+            disabled:true,
+            buttonvalue:'请稍等...'
+        })
+
+    const _this = this;
     if(!this.data.openid){
-        const that = this;
-        wx.showModal({
-            title:"友情提示",
-            content:"请授权读取微信用户信息,否则无法正常进入系统!授权完后,请点击左上角的返回图标,就可以继续啦!",
-            showCancel:false,
-            success:function(res){
-                wx.openSetting({
-                    success:function(res){
-                        if(res.authSetting["scope.userInfo"]){
-                          console.log("获得了用户授权");
-                          //获得了用户授权后再调用一下登录
-                          app.getUserInfo(function(userInfo){
+      this.data.openid = wx.getStorageSync("LoginSessionKey").openid;
+      if (!this.data.openid) {
+        app.getUserInfo(function (userInfo) {
                               that.setData({
                                   userInfo:userInfo
                               })    
@@ -77,23 +105,15 @@ formSubmit: function(e) {
                                   that.setData({
                                       openid:loginUser.openid
                                   })
-                              
+
                           });
-                        }
-                    }
-                });
-            }
-        });
-        return;
+        console.log("==========================================================");
+        this.data.openid = app.globalData.userInfo.openid;
+        if (!this.data.openid){
+          console.log("openid 还是空！");
+        }
+      }
     }
-
-    this.setData({
-            disabled:true,
-            buttonvalue:'请稍等...'
-        })
-
-    const _this = this;
-    
     wx.request({
                   url: app.globalData.appUrl+'/api/weixinuser-lunaria',
                   data: {
@@ -140,7 +160,7 @@ formSubmit: function(e) {
                 },function(){
                     
                     //  var loginUser = wx.getStorageSync('LoginSessionKey');  
-                        var loginUser = app.globalData.userInfo;     
+                  var loginUser = wx.getStorageSync("LoginSessionKey") || app.globalData.userInfo;     
                      //   console.log("initinfo中页面初始化时时,缓存中的loginUser.openid===>"+loginUser.openid); 
                         that.setData({
                             openid:loginUser.openid
