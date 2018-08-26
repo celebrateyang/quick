@@ -123,30 +123,30 @@ Page({
       backgroundAudioManager.src = 'http://dl.stream.qqmusic.qq.com/C4L0004gVaO30hdpUR.m4a?vkey=934E2EBB63374465DE1891EEC27B043C57608C13C4AEBDAA3E804A0A0FA8CF0764C7BA95DAF294CDE9F84B3E21B27E9956504F7CE9282AF5&guid=4589014471&uin=0&fromtag=66'
       backgroundAudioManager.play();
 
-      backgroundAudioManager.onPlay(function () {
-        that.setData({
-          isPlay: true
-        })
+    //   backgroundAudioManager.onPlay(function () {
+    //     that.setData({
+    //       isPlay: true
+    //     })
 
-      })
-      //暂停监听
-      backgroundAudioManager.onPause(function () {
-        that.setData({
-          isPlay: false
-        })
-      })
-      //停止监听
-      backgroundAudioManager.onStop(function () {
-        that.setData({
-          isPlay: false
-        })
-      })
-      //放完监听
-      backgroundAudioManager.onEnded(function () {
-        that.setData({
-          isPlay: false
-        })
-      })
+    //   })
+    //   //暂停监听
+    //   backgroundAudioManager.onPause(function () {
+    //     that.setData({
+    //       isPlay: false
+    //     })
+    //   })
+    //   //停止监听
+    //   backgroundAudioManager.onStop(function () {
+    //     that.setData({
+    //       isPlay: false
+    //     })
+    //   })
+    //   //放完监听
+    //   backgroundAudioManager.onEnded(function () {
+    //     that.setData({
+    //       isPlay: false
+    //     })
+    //   })
   },
   getUserInfo: function (e) {
     console.log(e)
